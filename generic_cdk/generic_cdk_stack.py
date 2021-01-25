@@ -4,7 +4,6 @@ from aws_cdk import (
     aws_apigateway as apigw
 )
 
-
 class GenericCdkStack(core.Stack):
 
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs) -> None:

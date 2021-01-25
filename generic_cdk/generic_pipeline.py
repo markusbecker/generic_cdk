@@ -5,6 +5,7 @@ from aws_cdk import(
     pipelines
 )
 
+from .generic_app_stage import GenericAppStage
 class GenericPipeline(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
@@ -13,7 +14,7 @@ class GenericPipeline(core.Stack):
         source_artifact = codepipeline.Artifact()
         cloud_assembly_artifact = codepipeline.Artifact()
 
-        pipelines.CdkPipeline(
+        pipeline = pipelines.CdkPipeline(
             self, 'GenericPipeline',
             cloud_assembly_artifact=cloud_assembly_artifact,
             pipeline_name='GenericPipeline',
@@ -32,6 +33,16 @@ class GenericPipeline(core.Stack):
                 cloud_assembly_artifact=cloud_assembly_artifact,
                 install_command='npm install -g aws-cdk && pip install -r requirements.txt',
                 synth_command='cdk synth'
+            )
+        )
+
+        pipeline.add_application_stage(
+            GenericAppStage(
+                self, 'dev',
+                env={
+                    'account': '920278350745',
+                    'region': 'eu-central-1'
+                }
             )
         )
 
