@@ -23,7 +23,7 @@ class GenericPipeline(core.Stack):
                 oauth_token=core.SecretValue.secrets_manager(
                     'github-token'
                 ),
-                owner='Markus',
+                owner='markusbecker',
                 repo='generic_cdk',
                 trigger=codepipeline_actions.GitHubTrigger.POLL
             ),
