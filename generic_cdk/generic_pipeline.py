@@ -51,7 +51,7 @@ class GenericPipeline(core.Stack):
                 self, 'prod',
                 env={
                     'account': '920278350745',
-                    'region': 'eu-west-1'
+                    'region': 'eu-central-1'
                 }
             )
         )
