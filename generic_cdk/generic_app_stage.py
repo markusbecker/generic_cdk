@@ -9,4 +9,4 @@ class GenericAppStage(core.Stage):
         super().__init__(scope, construct_id, **kwargs)
 
         service = GenericCdkStack(self, 'GenericService')
-        self.url_output = service.url_output
+        #self.url_output = service.url_output

@@ -55,4 +55,3 @@ class GenericPipeline(core.Stack):
                 }
             )
         )
-
