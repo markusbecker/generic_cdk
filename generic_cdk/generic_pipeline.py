@@ -46,3 +46,13 @@ class GenericPipeline(core.Stack):
             )
         )
 
+        pipeline.add_application_stage(
+            GenericAppStage(
+                self, 'prod',
+                env={
+                    'account': '920278350745',
+                    'region': 'eu-west-1'
+                }
+            )
+        )
+
