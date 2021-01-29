@@ -36,7 +36,7 @@ class GenericPipeline(core.Stack):
             )
         )
 
-        pipeline.add_application_stage(
+        dev_stage = pipeline.add_application_stage(
             GenericAppStage(
                 self, 'dev',
                 env={
@@ -44,6 +44,10 @@ class GenericPipeline(core.Stack):
                     'region': 'eu-central-1'
                 }
             )
+        )
+
+        dev_stage.add_manual_approval_action(
+            action_name='Lets go :)'
         )
 
         pipeline.add_application_stage(
