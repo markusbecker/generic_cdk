@@ -47,7 +47,7 @@ class GenericPipeline(core.Stack):
         )
 
         dev_stage.add_manual_approval_action(
-            action_name='Lets go :)'
+            action_name='Lets go'
         )
 
         pipeline.add_application_stage(
