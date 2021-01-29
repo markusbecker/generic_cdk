@@ -24,8 +24,8 @@ class GenericCdkStack(core.Stack):
             handler = lmb_function.current_version
         )
 
-        #self.url_output = core.CfnOutput(
-        #    self, 'Url',
-        #    value=api_gw.url
-        #)
+        self.url_output = core.CfnOutput(
+            self, 'Url',
+            value=api_gw.url
+        )
 

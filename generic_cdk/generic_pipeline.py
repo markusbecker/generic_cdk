@@ -32,6 +32,7 @@ class GenericPipeline(core.Stack):
                 source_artifact=source_artifact,
                 cloud_assembly_artifact=cloud_assembly_artifact,
                 install_command='npm install -g aws-cdk && pip install -r requirements.txt',
+                build_command='pytest unittests',
                 synth_command='cdk synth'
             )
         )
@@ -41,21 +42,20 @@ class GenericPipeline(core.Stack):
                 self, 'dev',
                 env={
                     'account': '920278350745',
-                    'region': 'eu-central-1'
+                    'region': 'eu-west-1'
                 }
             )
         )
 
         dev_stage.add_manual_approval_action(
-            action_name='lets_go'
-        )
+            action_name='ToProduction')
 
         pipeline.add_application_stage(
             GenericAppStage(
                 self, 'prod',
                 env={
                     'account': '920278350745',
-                    'region': 'eu-central-1'
+                    'region': 'eu-west-1'
                 }
             )
         )

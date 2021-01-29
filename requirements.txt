@@ -54,9 +54,16 @@ aws-cdk.pipelines==1.86.0
 aws-cdk.region-info==1.86.0
 cattrs==1.1.2
 constructs==3.2.113
--e git+https://github.com/markusbecker/generic_cdk.git@877c3e4c2c9f54dea3cb81d2e18a4c927d8bf08e#egg=generic_cdk
+-e git+https://github.com/markusbecker/generic_cdk.git@ecc7623d19b404983b9890dffc83913f76f49904#egg=generic_cdk
+iniconfig==1.1.1
 jsii==1.17.1
+packaging==20.9
+pluggy==0.13.1
 publication==0.0.3
+py==1.10.0
+pyparsing==2.4.7
+pytest==6.2.2
 python-dateutil==2.8.1
 six==1.15.0
+toml==0.10.2
 typing-extensions==3.7.4.3

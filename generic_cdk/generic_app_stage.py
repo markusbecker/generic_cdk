@@ -8,5 +8,6 @@ class GenericAppStage(core.Stage):
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
+        env = kwargs['env']
         service = GenericCdkStack(self, 'GenericService')
-        #self.url_output = service.url_output
+        self.url_output = service.url_output
